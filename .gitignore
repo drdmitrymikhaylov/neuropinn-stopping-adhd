@@ -1,0 +1,13 @@
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# local data, never committed
+data/
+
+# editors / os
+.DS_Store
+.vscode/
+.idea/
