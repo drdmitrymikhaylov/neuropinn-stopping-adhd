@@ -1,11 +1,20 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
-title: "neuropinn-stopping-adhd"
+title: "NeuroPINN: A Therapeutic Game as a Measurement of ADHD Decisions"
+abstract: "A therapeutic game as a measurement of ADHD decisions"
 authors:
   - family-names: Mikhaylov
     given-names: Dmitry
     orcid: "https://orcid.org/0009-0009-2108-6820"
+    affiliation: "Abu Dhabi Maritime Academy, AD Ports Group"
 repository-code: "https://github.com/drdmitrymikhaylov/neuropinn-stopping-adhd"
+url: "https://github.com/drdmitrymikhaylov/neuropinn-stopping-adhd"
 license: "CC-BY-4.0"
-year: 2026
+keywords:
+  - "adhd"
+  - "cognitive modelling"
+  - "drift diffusion model"
+  - "pinn"
+  - "reaction time"
+date-released: "2026-09-08"
