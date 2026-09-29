@@ -1,0 +1,186 @@
+{
+  "n": 79,
+  "composition": {
+    "adhd": {
+      "n": 35,
+      "medicated": 31,
+      "age_mean": 10.289714285714288,
+      "age_sd": 0.9404363371338225,
+      "n_trials_median": 555.0,
+      "n_trials_min": 125,
+      "n_trials_max": 754
+    },
+    "control": {
+      "n": 44,
+      "medicated": 0,
+      "age_mean": 10.472727272727274,
+      "age_sd": 0.975383916391479,
+      "n_trials_median": 671.5,
+      "n_trials_min": 170,
+      "n_trials_max": 779
+    },
+    "age_cohens_d": -0.19061681213971124,
+    "age_p_mannwhitney": 0.4443052892843077,
+    "n_trials_p_mannwhitney": 0.0027405418072100427,
+    "n_trials_median_all": 639.0
+  },
+  "correlations": {
+    "v~n_trials": 0.7507652423690804,
+    "v~age": 0.32094722036914525,
+    "a~n_trials": 0.5230535708904975,
+    "a~age": 0.11783707637371102,
+    "t0~n_trials": 0.3656746740359643,
+    "t0~age": -0.02905572586742372,
+    "accuracy~n_trials": 0.7619924300774615,
+    "accuracy~age": 0.27581767472038826,
+    "n_trials~accuracy": 0.7619924300774614
+  },
+  "adhd_medication_split": {
+    "n_medicated": 31,
+    "n_unmedicated": 4,
+    "v": {
+      "medicated_mean": 0.9017263655700991,
+      "unmedicated_mean": 1.0385760888457298,
+      "control_mean": 1.480040673505176
+    },
+    "a": {
+      "medicated_mean": 1.470621943473816,
+      "unmedicated_mean": 1.379961758852005,
+      "control_mean": 1.6557619869709015
+    },
+    "t0": {
+      "medicated_mean": 0.1835042197377451,
+      "unmedicated_mean": 0.18509475514292717,
+      "control_mean": 0.2163822506977753
+    },
+    "accuracy": {
+      "medicated_mean": 0.7809700301113345,
+      "unmedicated_mean": 0.7765398805582369,
+      "control_mean": 0.8591125059921616
+    },
+    "cv_rt": {
+      "medicated_mean": 0.2965156682168432,
+      "unmedicated_mean": 0.3253007492068118,
+      "control_mean": 0.2691855098778666
+    },
+    "mean_rt": {
+      "medicated_mean": 0.6286064838059616,
+      "unmedicated_mean": 0.5834542813585877,
+      "control_mean": 0.641348509707859
+    }
+  },
+  "age_adjusted": {
+    "v": {
+      "cohens_d_raw": -0.8723677714016678,
+      "cohens_d_age_adjusted": -0.8469134647803419,
+      "p_mannwhitney_age_adjusted": 0.00043416282791747837,
+      "slope_per_year": 0.2343911737040466
+    },
+    "a": {
+      "cohens_d_raw": -0.8151052923892982,
+      "cohens_d_age_adjusted": -0.7934801004823523,
+      "p_mannwhitney_age_adjusted": 0.001727378925430452,
+      "slope_per_year": 0.03167142178295705
+    },
+    "t0": {
+      "cohens_d_raw": -0.552247712565857,
+      "cohens_d_age_adjusted": -0.5586735355973429,
+      "p_mannwhitney_age_adjusted": 0.012354230715914074,
+      "slope_per_year": -0.0018511297767709886
+    },
+    "accuracy": {
+      "cohens_d_raw": -0.9653185742081115,
+      "cohens_d_age_adjusted": -0.9388624943893297,
+      "p_mannwhitney_age_adjusted": 0.00021898534164360646,
+      "slope_per_year": 0.02590165954273763
+    },
+    "cv_rt": {
+      "cohens_d_raw": 0.640340119224641,
+      "cohens_d_age_adjusted": 0.6278797089554149,
+      "p_mannwhitney_age_adjusted": 0.00957851784073127,
+      "slope_per_year": -0.0032847035766416202
+    },
+    "mean_rt": {
+      "cohens_d_raw": -0.24158290623474063,
+      "cohens_d_age_adjusted": -0.32829669390489186,
+      "p_mannwhitney_age_adjusted": 0.0832632652099924,
+      "slope_per_year": -0.02638503128179639
+    }
+  },
+  "loo_auc": {
+    "n_boot": 5000,
+    "stratified": true,
+    "seed": 0,
+    "sets": {
+      "accuracy alone": {
+        "loo_auc": 0.7292207792207792,
+        "ci95": [
+          0.6123376623376623,
+          0.8324837662337661
+        ]
+      },
+      "accuracy + RT variability": {
+        "loo_auc": 0.7123376623376624,
+        "ci95": [
+          0.5928571428571429,
+          0.8188474025974024
+        ]
+      },
+      "classical summary": {
+        "loo_auc": 0.7123376623376624,
+        "ci95": [
+          0.5948051948051948,
+          0.8175324675324674
+        ]
+      },
+      "model parameters": {
+        "loo_auc": 0.7025974025974026,
+        "ci95": [
+          0.5857142857142857,
+          0.8123538961038959
+        ]
+      },
+      "model + accuracy": {
+        "loo_auc": 0.7129870129870131,
+        "ci95": [
+          0.5967532467532467,
+          0.8188311688311688
+        ]
+      }
+    },
+    "differences_vs_accuracy": {
+      "accuracy + RT variability": {
+        "accuracy_minus_this": 0.016883116883116833,
+        "ci95": [
+          0.00194805194805181,
+          0.03571428571428559
+        ],
+        "share_of_resamples_this_beats_accuracy": 0.01
+      },
+      "classical summary": {
+        "accuracy_minus_this": 0.016883116883116833,
+        "ci95": [
+          -0.032467532467532534,
+          0.06558441558441552
+        ],
+        "share_of_resamples_this_beats_accuracy": 0.2408
+      },
+      "model parameters": {
+        "accuracy_minus_this": 0.02662337662337666,
+        "ci95": [
+          -0.021428571428571463,
+          0.07792207792207784
+        ],
+        "share_of_resamples_this_beats_accuracy": 0.1414
+      },
+      "model + accuracy": {
+        "accuracy_minus_this": 0.016233766233766156,
+        "ci95": [
+          -0.02857142857142858,
+          0.0636363636363636
+        ],
+        "share_of_resamples_this_beats_accuracy": 0.2352
+      }
+    }
+  }
+}

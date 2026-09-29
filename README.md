@@ -69,8 +69,9 @@ Fifty trials are enough. None of the 79 fits ended against a parameter bound.
 
 ## Numbers
 
-Open data: 79 children, 35 with an ADHD diagnosis, n-back tasks, a median of
-639 usable correct trials each.
+Open data: 79 children, 35 with an ADHD diagnosis (31 of them medicated at
+testing; no control was), n-back tasks, a median of 639 usable correct trials
+each (555 in the ADHD group, 672 in controls).
 
 ![Groups](figures/03_groups.png)
 
@@ -106,7 +107,11 @@ Leave-one-out cross-validated AUC for telling the two groups apart:
 The drift rate correlates **0.95** with plain accuracy. It is very nearly a
 restatement of it. Solving a partial differential equation with a neural
 network, fitting three parameters per child and recovering them at r ≥ 0.93
-produces a classifier that is *worse* than the proportion of correct answers.
+produces a classifier that is no better than the proportion of correct answers.
+(An earlier version of this page said *worse*. The gap is 0.027 with a 95 %
+bootstrap interval of −0.021 to +0.078, and the model parameters come out
+ahead in 14 % of resamples; see "Who is being compared" below. "No better" is
+what 79 children can support.)
 
 This is worth stating in full because the literature on decision models in
 ADHD reports reduced drift rate as a finding in its own right. On these data it
@@ -118,6 +123,51 @@ primarily with accuracy. It is lower in the ADHD group too. Accuracy alone
 cannot tell you whether a child is slower at accumulating evidence or simply
 demands less of it before committing. The model can, at the cost of assuming
 the model.
+
+### Who is being compared
+
+Three things the group table above does not say, read from the per-child
+fits in [`results/cohort_fits.json`](results/cohort_fits.json)
+(`results/confounds_check.json`; computed 2026-09-29).
+
+**Medication.** 31 of the 35 children in the ADHD group were on medication at
+the time of testing; none of the 44 controls were. The contrast in every row
+of the table is therefore *medicated ADHD versus unmedicated control*, and the
+data cannot separate the diagnosis from the drug. The four unmedicated ADHD
+children have a mean drift of 1.04 against 0.90 for the medicated 31, a
+boundary of 1.38 against 1.47 — the same direction as the group difference,
+but four children decide nothing. Stimulant medication is known to change
+reaction-time distributions, so "reduced drift rate in ADHD" here may as
+easily read "drift rate under medication".
+
+**Age is not the explanation.** The groups are matched: 10.3 ± 0.9 years
+(ADHD) against 10.5 ± 1.0 (control), *d* = −0.19, *p* = 0.44. Residualising
+every measure on age across all 79 children moves the effect sizes by at most
+0.03: drift −0.87 → −0.85, boundary −0.82 → −0.79, non-decision −0.55 → −0.56.
+Drift rises with age (*r* = 0.32) but the groups are the same age.
+
+**Trial counts differ by group.** "A median of 639 usable correct trials" is
+555 for the ADHD group and 672 for controls (*p* = 0.003). Usable trials are
+correct trials, so this is accuracy by another route (*r* = 0.76 between the
+two), and the drift rate correlates 0.75 with the trial count for the same
+reason. It is not a separate confound, but a reader comparing fit quality
+across groups should know that the ADHD fits rest on fewer trials.
+
+**How wide the AUC table is.** Out-of-fold probabilities resampled over
+children (5 000 stratified draws, paired across feature sets):
+
+| Features | LOO AUC | 95 % CI | accuracy − this | 95 % CI |
+|---|---|---|---|---|
+| accuracy alone | 0.729 | 0.61 – 0.83 | — | — |
+| accuracy + RT variability | 0.712 | 0.59 – 0.82 | +0.017 | +0.002 – +0.036 |
+| four classical measures | 0.712 | 0.60 – 0.82 | +0.017 | −0.032 – +0.066 |
+| three model parameters | 0.703 | 0.59 – 0.81 | +0.027 | −0.021 – +0.078 |
+| model parameters + accuracy | 0.713 | 0.60 – 0.82 | +0.016 | −0.029 – +0.064 |
+
+Every interval is two tenths wide. The only difference that clears zero is
+the one where adding reaction-time variability to accuracy *hurts*, and it
+clears it by 0.002. The claim the table supports is that none of the richer
+feature sets beats accuracy; it does not support ranking them.
 
 ## Caveats
 
@@ -150,6 +200,9 @@ cognition.
   identify the starting point, which is fixed at the midpoint here.
 - A dataset where the model beats accuracy. That would need a task on which
   accuracy is near ceiling and all the information is in the timing.
+- An unmedicated ADHD sample, or the same children on and off medication. With
+  31 of 35 medicated here, the group differences above are as much a
+  measurement of the drug as of the diagnosis.
 
 ## Page history
 

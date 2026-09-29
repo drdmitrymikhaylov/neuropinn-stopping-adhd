@@ -1,0 +1,58 @@
+{
+  "accuracy alone": {
+    "features": [
+      "accuracy"
+    ],
+    "loo_auc": 0.7292207792207792
+  },
+  "mean RT alone": {
+    "features": [
+      "mean_rt"
+    ],
+    "loo_auc": 0.4915584415584416
+  },
+  "accuracy + RT variability": {
+    "features": [
+      "accuracy",
+      "cv_rt"
+    ],
+    "loo_auc": 0.7123376623376624
+  },
+  "classical summary": {
+    "features": [
+      "mean_rt",
+      "cv_rt",
+      "tau",
+      "accuracy"
+    ],
+    "loo_auc": 0.7123376623376624
+  },
+  "model parameters": {
+    "features": [
+      "v",
+      "a",
+      "t0"
+    ],
+    "loo_auc": 0.7025974025974026
+  },
+  "model + accuracy": {
+    "features": [
+      "v",
+      "a",
+      "t0",
+      "accuracy"
+    ],
+    "loo_auc": 0.7129870129870131
+  },
+  "correlations": {
+    "v~accuracy": 0.949855470602632,
+    "v~mean_rt": -0.12089884502363465,
+    "v~cv_rt": -0.6666323764967647,
+    "a~accuracy": 0.6709102766177947,
+    "a~mean_rt": 0.3684228773799488,
+    "a~cv_rt": -0.5533432804014939,
+    "t0~accuracy": 0.5065681030701389,
+    "t0~mean_rt": 0.31075659490667124,
+    "t0~cv_rt": -0.714357729744651
+  }
+}
