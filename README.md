@@ -14,6 +14,18 @@
 
 ---
 
+## Games first
+
+This work started with games. In 2022 I published a game-based method for
+identifying digital biomarkers of Parkinson's disease (*Journal of
+Intelligent Learning Systems and Applications*): the way a person plays
+carries clinical signal. The same idea went into attention-training games
+for children, built with clinical and commercial partners. A game session
+produces a stream of reaction times, and the usual summary throws most of it
+away. This repository is the mathematics underneath: one equation for how a
+decision forms, solved properly, tested on open data, and reported with the
+result it actually gave.
+
 ## In one paragraph
 
 A reaction time is the first time a noisy accumulation of evidence reaches a
