@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
-title: "NeuroPINN: A Therapeutic Game as a Measurement of ADHD Decisions"
-abstract: "A therapeutic game as a measurement of ADHD decisions"
+title: "NeuroPINN: Drift-Diffusion Parameters from Children's Reaction Times"
+abstract: "A physics-informed solver for the decision (first-passage) equation, fitted to the reaction times of 79 children, with a plain account of what it does not add over counting correct answers"
 authors:
   - family-names: Mikhaylov
     given-names: Dmitry

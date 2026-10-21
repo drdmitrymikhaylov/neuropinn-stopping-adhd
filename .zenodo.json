@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
-  "title": "NeuroPINN: A Therapeutic Game as a Measurement of ADHD Decisions",
-  "description": "A therapeutic game as a measurement of ADHD decisions",
+  "title": "NeuroPINN: Drift-Diffusion Parameters from Children's Reaction Times",
+  "description": "A physics-informed solver for the decision (first-passage) equation, fitted to the reaction times of 79 children, with a plain account of what it does not add over counting correct answers",
   "creators": [
     {
       "name": "Mikhaylov, Dmitry",
