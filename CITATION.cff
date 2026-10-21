@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
 title: "NeuroPINN: Drift-Diffusion Parameters from Children's Reaction Times"
+doi: "10.5281/zenodo.23529566"
 abstract: "A physics-informed solver for the decision (first-passage) equation, fitted to the reaction times of 79 children, with a plain account of what it does not add over counting correct answers"
 authors:
   - family-names: Mikhaylov
