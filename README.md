@@ -1,5 +1,7 @@
 # Reaction times, ADHD, and a solver that refuses to flatter itself
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23529566.svg)](https://doi.org/10.5281/zenodo.23529566)
+
 **A physics-informed solver for the decision equation, applied to 79 children, and a plain account of what it does not buy you.**
 
 ![Validation](figures/01_validation.png)
