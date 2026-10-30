@@ -1,0 +1,461 @@
+{
+  "n": 79,
+  "n_adhd": 35,
+  "n_control": 44,
+  "identity": {
+    "sigmoid_w_minus_accuracy": {
+      "mean": 0.00015855724629791255,
+      "sd": 0.06420331505696884,
+      "median_abs": 0.054427862507011926,
+      "max_abs": 0.1380105576361379
+    },
+    "corr_w_logit_accuracy": 0.9741573336396934,
+    "corr_v_logit_accuracy": 0.9762081032668279,
+    "corr_v_accuracy": 0.949855470602632,
+    "corr_a_logit_accuracy": 0.7080104313708948,
+    "corr_v_w": 0.9723033717236874
+  },
+  "boundary": {
+    "corr_a_accuracy": 0.6709102766177947,
+    "corr_a_cv_rt": -0.5533432804014939,
+    "corr_accuracy_cv_rt": -0.6540212874869324,
+    "spearman_a_accuracy": 0.7927215189873419,
+    "spearman_a_cv_rt": -0.6256085686465434,
+    "partial_a_cv_rt_given_accuracy": {
+      "r": -0.2042114429528714,
+      "ci95": [
+        -0.40819603636248425,
+        0.019195592922842255
+      ],
+      "p": 0.07291246962736764
+    },
+    "partial_a_accuracy_given_cv_rt": {
+      "r": 0.49041013807443395,
+      "ci95": [
+        0.3006908019542631,
+        0.6427945689408313
+      ],
+      "p": 5.169375505662949e-06
+    },
+    "r2_a_on_accuracy": 0.4501205992713657,
+    "r2_a_on_cv_rt": 0.30618878596548593,
+    "r2_a_on_both": 0.4730518423908431,
+    "within_group": {
+      "adhd": {
+        "corr_a_accuracy": 0.5414276849808655,
+        "corr_a_cv_rt": -0.6329147711457523
+      },
+      "control": {
+        "corr_a_accuracy": 0.7114664138664291,
+        "corr_a_cv_rt": -0.4897721581058178
+      }
+    },
+    "group_effect_residualised_on_accuracy": {
+      "v": {
+        "cohens_d_raw": -0.8723677714016678,
+        "p_mannwhitney_raw": 0.00037386886298057575,
+        "cohens_d_residualised": 0.08312517663294974,
+        "p_mannwhitney_residualised": 0.653394122471612
+      },
+      "a": {
+        "cohens_d_raw": -0.8151052923892982,
+        "p_mannwhitney_raw": 0.001186702945398986,
+        "cohens_d_residualised": -0.23297249583746488,
+        "p_mannwhitney_residualised": 0.6821177903882518
+      },
+      "t0": {
+        "cohens_d_raw": -0.552247712565857,
+        "p_mannwhitney_raw": 0.012702888256326867,
+        "cohens_d_residualised": -0.10712306896585326,
+        "p_mannwhitney_residualised": 0.7260690837294399
+      },
+      "cv_rt": {
+        "cohens_d_raw": 0.640340119224641,
+        "p_mannwhitney_raw": 0.008289840092687755,
+        "cohens_d_residualised": 0.054999711093154414,
+        "p_mannwhitney_residualised": 0.8551263263657463
+      }
+    },
+    "loo_auc_accuracy_plus_one": {
+      "accuracy alone": {
+        "features": [
+          "accuracy"
+        ],
+        "loo_auc": 0.7292207792207792
+      },
+      "accuracy + a": {
+        "features": [
+          "accuracy",
+          "a"
+        ],
+        "loo_auc": 0.7285714285714286
+      },
+      "accuracy + t0": {
+        "features": [
+          "accuracy",
+          "t0"
+        ],
+        "loo_auc": 0.7097402597402597
+      },
+      "accuracy + v": {
+        "features": [
+          "accuracy",
+          "v"
+        ],
+        "loo_auc": 0.7259740259740259
+      },
+      "a alone": {
+        "features": [
+          "a"
+        ],
+        "loo_auc": 0.6792207792207792
+      },
+      "t0 alone": {
+        "features": [
+          "t0"
+        ],
+        "loo_auc": 0.6058441558441559
+      },
+      "v alone": {
+        "features": [
+          "v"
+        ],
+        "loo_auc": 0.7038961038961039
+      },
+      "w alone": {
+        "features": [
+          "w"
+        ],
+        "loo_auc": 0.714935064935065
+      },
+      "RT variability alone": {
+        "features": [
+          "cv_rt"
+        ],
+        "loo_auc": 0.6402597402597403
+      },
+      "a + RT variability": {
+        "features": [
+          "a",
+          "cv_rt"
+        ],
+        "loo_auc": 0.6805194805194805
+      }
+    }
+  },
+  "unmedicated": {
+    "n_unmedicated": 4,
+    "n_medicated": 31,
+    "n_control": 44,
+    "subjects": [
+      "sub-06",
+      "sub-08",
+      "sub-30",
+      "sub-67"
+    ],
+    "min_two_sided_exact_p": 1.0278548668927947e-05,
+    "measures": {
+      "v": {
+        "unmedicated_values": [
+          1.119808316230774,
+          0.13139745593070984,
+          1.3200390338897705,
+          1.583059549331665
+        ],
+        "unmedicated_mean": 1.0385760888457298,
+        "unmedicated_median": 1.2199236750602722,
+        "medicated_mean": 0.9017263655700991,
+        "control_mean": 1.480040673505176,
+        "control_median": 1.4591465592384338,
+        "percentile_among_controls": [
+          29.545454545454547,
+          0.0,
+          34.090909090909086,
+          52.27272727272727
+        ],
+        "p_exact_unmedicated_vs_control": 0.1802960222016651,
+        "p_exact_medicated_vs_unmedicated": 0.6708174178762414
+      },
+      "a": {
+        "unmedicated_values": [
+          1.3329479694366455,
+          1.330687165260315,
+          1.518691062927246,
+          1.3375208377838135
+        ],
+        "unmedicated_mean": 1.379961758852005,
+        "unmedicated_median": 1.3352344036102295,
+        "medicated_mean": 1.470621943473816,
+        "control_mean": 1.6557619869709015,
+        "control_median": 1.6550967693328857,
+        "percentile_among_controls": [
+          6.8181818181818175,
+          6.8181818181818175,
+          40.909090909090914,
+          6.8181818181818175
+        ],
+        "p_exact_unmedicated_vs_control": 0.019611470860314523,
+        "p_exact_medicated_vs_unmedicated": 0.21291061879297174
+      },
+      "t0": {
+        "unmedicated_values": [
+          0.16524434089660645,
+          0.11751878261566162,
+          0.25098371505737305,
+          0.20663218200206757
+        ],
+        "unmedicated_mean": 0.18509475514292717,
+        "unmedicated_median": 0.185938261449337,
+        "medicated_mean": 0.1835042197377451,
+        "control_mean": 0.2163822506977753,
+        "control_median": 0.21857016533613205,
+        "percentile_among_controls": [
+          29.545454545454547,
+          0.0,
+          68.18181818181817,
+          43.18181818181818
+        ],
+        "p_exact_unmedicated_vs_control": 0.3555658341042245,
+        "p_exact_medicated_vs_unmedicated": 0.8611535523300229
+      },
+      "w": {
+        "unmedicated_values": [
+          1.4926462173461914,
+          0.17484889924526215,
+          2.0047314167022705,
+          2.117375135421753
+        ],
+        "unmedicated_mean": 1.4474004171788692,
+        "unmedicated_median": 1.748688817024231,
+        "medicated_mean": 1.3909931418395811,
+        "control_mean": 2.5698943591930647,
+        "control_median": 2.54935359954834,
+        "percentile_among_controls": [
+          25.0,
+          0.0,
+          38.63636363636363,
+          38.63636363636363
+        ],
+        "p_exact_unmedicated_vs_control": 0.1153355946140405,
+        "p_exact_medicated_vs_unmedicated": 0.8611535523300229
+      },
+      "accuracy": {
+        "unmedicated_values": [
+          0.8308823529411765,
+          0.5676567656765676,
+          0.8515228426395939,
+          0.8560975609756097
+        ],
+        "unmedicated_mean": 0.7765398805582369,
+        "unmedicated_median": 0.8412025977903852,
+        "medicated_mean": 0.7809700301113345,
+        "control_mean": 0.8591125059921616,
+        "control_median": 0.8624327995561423,
+        "percentile_among_controls": [
+          27.27272727272727,
+          0.0,
+          47.72727272727273,
+          50.0
+        ],
+        "p_exact_unmedicated_vs_control": 0.2354198787131257,
+        "p_exact_medicated_vs_unmedicated": 0.6347593582887701
+      },
+      "cv_rt": {
+        "unmedicated_values": [
+          0.3447631997465175,
+          0.3985813332099196,
+          0.2679763927600893,
+          0.2898820711107209
+        ],
+        "unmedicated_mean": 0.3253007492068118,
+        "unmedicated_median": 0.31732263542861916,
+        "medicated_mean": 0.2965156682168432,
+        "control_mean": 0.2691855098778666,
+        "control_median": 0.2592373141031209,
+        "percentile_among_controls": [
+          95.45454545454545,
+          100.0,
+          59.09090909090909,
+          77.27272727272727
+        ],
+        "p_exact_unmedicated_vs_control": 0.027998766574159728,
+        "p_exact_medicated_vs_unmedicated": 0.43663101604278076
+      },
+      "mean_rt": {
+        "unmedicated_values": [
+          0.5447271386430679,
+          0.6011279069767442,
+          0.6688509687034276,
+          0.5191111111111111
+        ],
+        "unmedicated_mean": 0.5834542813585877,
+        "unmedicated_median": 0.572927522809906,
+        "medicated_mean": 0.6286064838059616,
+        "control_mean": 0.641348509707859,
+        "control_median": 0.647394720328347,
+        "percentile_among_controls": [
+          6.8181818181818175,
+          27.27272727272727,
+          70.45454545454545,
+          2.272727272727273
+        ],
+        "p_exact_unmedicated_vs_control": 0.1347209374036386,
+        "p_exact_medicated_vs_unmedicated": 0.35152788388082506
+      },
+      "tau": {
+        "unmedicated_values": [
+          0.11700630555537521,
+          0.1344034318459185,
+          0.08112214512823337,
+          0.11174226888427811
+        ],
+        "unmedicated_mean": 0.11106853785345129,
+        "unmedicated_median": 0.11437428721982666,
+        "medicated_mean": 0.08122523583823373,
+        "control_mean": 0.08345976375327523,
+        "control_median": 0.09100916697497502,
+        "percentile_among_controls": [
+          90.9090909090909,
+          100.0,
+          29.545454545454547,
+          88.63636363636364
+        ],
+        "p_exact_unmedicated_vs_control": 0.07591736046870182,
+        "p_exact_medicated_vs_unmedicated": 0.19400305576776167
+      },
+      "age": {
+        "unmedicated_values": [
+          11.85,
+          9.34,
+          9.05,
+          10.54
+        ],
+        "unmedicated_mean": 10.195,
+        "unmedicated_median": 9.94,
+        "medicated_mean": 10.301935483870968,
+        "control_mean": 10.472727272727274,
+        "control_median": 10.594999999999999,
+        "percentile_among_controls": [
+          97.72727272727273,
+          15.909090909090908,
+          4.545454545454546,
+          45.45454545454545
+        ],
+        "p_exact_unmedicated_vs_control": 0.6016445677870284,
+        "p_exact_medicated_vs_unmedicated": 0.7077540106951872
+      },
+      "n_trials": {
+        "unmedicated_values": [
+          678.0,
+          172.0,
+          671.0,
+          702.0
+        ],
+        "unmedicated_mean": 555.75,
+        "unmedicated_median": 674.5,
+        "medicated_mean": 499.06451612903226,
+        "control_mean": 612.3181818181819,
+        "control_median": 671.5,
+        "percentile_among_controls": [
+          54.54545454545454,
+          2.272727272727273,
+          47.72727272727273,
+          61.36363636363637
+        ],
+        "p_exact_unmedicated_vs_control": 0.6270531400966183,
+        "p_exact_medicated_vs_unmedicated": 0.46711229946524063
+      }
+    },
+    "power": {
+      "drift": {
+        "d": -0.8723677714016678,
+        "power_4_vs_44": 0.3729926932221696,
+        "power_31_vs_44": 0.956454466033018
+      },
+      "boundary": {
+        "d": -0.8151052923892982,
+        "power_4_vs_44": 0.3332221603496774,
+        "power_31_vs_44": 0.9292239866991439
+      },
+      "t0": {
+        "d": -0.552247712565857,
+        "power_4_vs_44": 0.1789916074463608,
+        "power_31_vs_44": 0.6421072277671138
+      },
+      "mde_80pct_4_vs_44": 1.4945224755518802,
+      "mde_80pct_31_vs_44": 0.6657430814306935,
+      "power_at_drift_d_by_n_unmedicated": {
+        "4": 0.3729926932221696,
+        "8": 0.6048935522563736,
+        "12": 0.7488347732534172,
+        "16": 0.8360665798106024,
+        "20": 0.8895927249892569
+      }
+    }
+  },
+  "age_residualised_loo_auc": {
+    "age alone": {
+      "features": [
+        "age"
+      ],
+      "loo_auc": 0.4305194805194805
+    },
+    "accuracy alone": {
+      "features": [
+        "accuracy"
+      ],
+      "loo_auc_raw": 0.7292207792207792,
+      "loo_auc_age_residualised": 0.714935064935065,
+      "loo_auc_raw_plus_age": 0.709090909090909
+    },
+    "mean RT alone": {
+      "features": [
+        "mean_rt"
+      ],
+      "loo_auc_raw": 0.4915584415584416,
+      "loo_auc_age_residualised": 0.5454545454545454,
+      "loo_auc_raw_plus_age": 0.5175324675324675
+    },
+    "accuracy + RT variability": {
+      "features": [
+        "accuracy",
+        "cv_rt"
+      ],
+      "loo_auc_raw": 0.7123376623376624,
+      "loo_auc_age_residualised": 0.7012987012987013,
+      "loo_auc_raw_plus_age": 0.6961038961038961
+    },
+    "classical summary": {
+      "features": [
+        "mean_rt",
+        "cv_rt",
+        "tau",
+        "accuracy"
+      ],
+      "loo_auc_raw": 0.7123376623376624,
+      "loo_auc_age_residualised": 0.7000000000000001,
+      "loo_auc_raw_plus_age": 0.6922077922077923
+    },
+    "model parameters": {
+      "features": [
+        "v",
+        "a",
+        "t0"
+      ],
+      "loo_auc_raw": 0.7025974025974026,
+      "loo_auc_age_residualised": 0.7,
+      "loo_auc_raw_plus_age": 0.687012987012987
+    },
+    "model + accuracy": {
+      "features": [
+        "v",
+        "a",
+        "t0",
+        "accuracy"
+      ],
+      "loo_auc_raw": 0.7129870129870131,
+      "loo_auc_age_residualised": 0.7051948051948052,
+      "loo_auc_raw_plus_age": 0.7012987012987013
+    }
+  }
+}

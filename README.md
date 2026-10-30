@@ -131,12 +131,73 @@ This is worth stating in full because the literature on decision models in
 ADHD reports reduced drift rate as a finding in its own right. On these data it
 carries no information that accuracy did not already carry.
 
-What the model does add is separation of causes rather than discrimination.
-The boundary *a* correlates with reaction-time variability (−0.55) and not
-primarily with accuracy. It is lower in the ADHD group too. Accuracy alone
-cannot tell you whether a child is slower at accumulating evidence or simply
-demands less of it before committing. The model can, at the cost of assuming
-the model.
+What the model might add is separation of causes rather than discrimination.
+Accuracy alone cannot tell you whether a child is slower at accumulating
+evidence or simply demands less of it before committing; the model can, at
+the cost of assuming the model. An earlier version of this page claimed the
+boundary *a* "correlates with reaction-time variability (−0.55) and not
+primarily with accuracy". That was wrong by the repository's own numbers:
+*a* correlates 0.67 with accuracy, more than with variability, and its group
+difference goes with accuracy (see "What the boundary restates" below).
+
+### What the boundary restates
+
+Read from the per-child fits in
+[`results/cohort_fits.json`](results/cohort_fits.json)
+(`results/boundary_check.json`; computed 2026-10-30).
+
+**The identity first.** The likelihood pins the probability of a correct
+response, sigmoid(*v*·*a*), to each child's share of correct answers, so
+*w* = *v*·*a* is logit(accuracy) by construction, up to what the timing adds:
+sigmoid(*w*) differs from accuracy by 0.0002 on average over the 79 children,
+sd 0.064, at most 0.138. The "0.95" above is the correlation on the wrong
+scale: the drift correlates **0.98 with logit(accuracy)** (*w* 0.97). The
+drift is not a finding about accuracy; it is accuracy, transformed.
+
+**The boundary.** The correlation with reaction-time variability is real
+(−0.55) but the one with accuracy is larger (0.67; Spearman 0.79 against
+−0.63), and accuracy and variability correlate −0.65 with each other, so the
+two are mostly one correlation. Holding accuracy, the boundary's partial
+correlation with variability is **−0.20** (95 % CI −0.41 to +0.02, *p* =
+0.07); holding variability, its partial correlation with accuracy is **+0.49**
+(+0.30 to +0.64). Accuracy explains 45 % of the variance of *a*, variability
+31 %, both together 47 % — variability adds two points. Within the ADHD group
+alone the order reverses (variability −0.63, accuracy 0.54; controls 0.71 and
+−0.49), so the claim survives as a statement about 35 children and fails for
+the 79.
+
+**The group difference in *a* is carried by accuracy.** Residualised on
+accuracy across all 79 children, the boundary's Cohen's *d* goes from −0.82 to
+**−0.23** (*p* = 0.68). The other two parameters go the same way: drift
+−0.87 → +0.08, non-decision time −0.55 → −0.11, and reaction-time
+variability itself +0.64 → +0.05. Nothing in the three-parameter description
+separates the groups once the share of correct answers is taken out.
+
+| Features | LOO AUC |
+|---|---|
+| accuracy alone | 0.729 |
+| accuracy + boundary *a* | 0.729 |
+| accuracy + drift *v* | 0.726 |
+| accuracy + non-decision *t₀* | 0.710 |
+| *w* = *v*·*a* alone | 0.715 |
+| drift *v* alone | 0.704 |
+| boundary *a* alone | 0.679 |
+| boundary *a* + RT variability | 0.681 |
+| RT variability alone | 0.640 |
+| non-decision *t₀* alone | 0.606 |
+
+Same pipeline as the table above (standardised logistic regression,
+leave-one-out). Adding the boundary to accuracy changes the AUC in the fourth
+decimal (0.7292 → 0.7286). The boundary on its own classifies at 0.68, below
+accuracy, and adding variability to it buys 0.001.
+
+**What this does not show.** It does not show that the boundary measures
+nothing — within the ADHD group it tracks variability more than accuracy, and
+a task with accuracy at ceiling would be the place to see what is left. It
+does not test the model's fit (see Caveats: the median child is a poor fit).
+Partial correlations are linear; the residualising is a least-squares line on
+all 79 children, groups pooled. The LOO AUCs here have the same two-tenths
+intervals as the table in "Who is being compared".
 
 ### Who is being compared
 
@@ -153,6 +214,22 @@ boundary of 1.38 against 1.47 — the same direction as the group difference,
 but four children decide nothing. Stimulant medication is known to change
 reaction-time distributions, so "reduced drift rate in ADHD" here may as
 easily read "drift rate under medication".
+
+*Added 2026-10-30, from `results/boundary_check.json`.* "Decide nothing" with
+numbers: the four unmedicated children's drifts are 1.12, 0.13, 1.32 and
+1.58, which sit at the 30th, 0th, 34th and 52nd percentiles of the 44
+controls — three near the control median and one below every control, so
+the mean of 1.04 is pulled down by one child. Exact Mann-Whitney against the controls: drift
+*p* = 0.18, non-decision time 0.36, accuracy 0.24. The two measures on which
+the four do sit together are the **boundary (1.33, 1.33, 1.52, 1.34 — three at
+the 7th percentile of controls; *p* = 0.020)** and reaction-time variability
+(95th, 100th, 59th, 77th percentiles; *p* = 0.028), the two the boundary
+section above ties together — on ten measures tested, with no correction.
+Medicated against unmedicated inside the ADHD group: *p* ≥ 0.19 on every
+measure. Four against 44 has a power of **0.37** to find the published drift
+effect (*d* = 0.87) and needs *d* = 1.49 for 80 %; sixteen unmedicated
+children would give 0.84. The smallest two-sided *p* the exact test can
+return at 4 vs 44 is 1 in 97 290, so the test is not what limits it.
 
 **Age is not the explanation.** The groups are matched: 10.3 ± 0.9 years
 (ADHD) against 10.5 ± 1.0 (control), *d* = −0.19, *p* = 0.44. Residualising
@@ -182,6 +259,16 @@ Every interval is two tenths wide. The only difference that clears zero is
 the one where adding reaction-time variability to accuracy *hurts*, and it
 clears it by 0.002. The claim the table supports is that none of the richer
 feature sets beats accuracy; it does not support ranking them.
+
+*Added 2026-10-30.* The age adjustment above was given for the effect sizes
+only. With every feature residualised on age (least-squares line, all 79
+children) the LOO AUCs are: accuracy alone 0.729 → **0.715**, accuracy +
+RT variability 0.712 → 0.701, four classical measures 0.712 → 0.700, three
+model parameters 0.703 → 0.700, model + accuracy 0.713 → 0.705. The order is
+kept, every set moves by ≤ 0.015, and the gap between accuracy and the
+model parameters narrows from 0.027 to 0.015. Age on its own classifies at
+0.43 — below chance — and adding it as a feature lowers every set
+(0.687–0.709).
 
 ## Caveats
 
